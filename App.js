@@ -7,7 +7,6 @@
  */
 
 import React from 'react';
-import type {Node} from 'react';
 import {
   SafeAreaView,
   ScrollView,
@@ -17,37 +16,14 @@ import {
   useColorScheme,
   View,
   Screen,
+  Button
 } from 'react-native';
 
-import {
-  Colors,
-  DebugInstructions,
-  Header,
-  LearnMoreLinks,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
-import {ThemeProvider, Button, createTheme} from '@rneui/themed';
+import MainNav from './src/navigation/MainNav';
 
-const theme = createTheme({
-  components: {
-    Button: {
-      raised: true,
-    },
-  },
-});
-
-const App: () => Node = () => {
+const App = () => {
   return (
-    <ThemeProvider theme={theme}>
-      <SafeAreaView style={{}}>
-        <Text>hi</Text>
-        <Button onPress={() => {
-          alert('You tapped the button!');
-        }}
-          title="Press Me"/>
-      <Button title="My 2nd Button" />
-      </SafeAreaView>
-    </ThemeProvider>
+      <MainNav />
   );
 };
 
